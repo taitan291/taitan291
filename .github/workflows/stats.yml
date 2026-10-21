@@ -1,0 +1,71 @@
+name: Update language stats
+
+on:
+  schedule:
+    - cron: "23 0 * * *" # daily (UTC)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/generate-stats.mjs
+      - .github/workflows/stats.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: language-stats
+  cancel-in-progress: false
+
+env:
+  # Adjust to taste (comma separated).
+  EXCLUDE_LANGUAGES: ""
+  EXCLUDE_REPOS: ""
+  TOP_N: "8"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate language stats
+        env:
+          # STATS_TOKEN is a personal access token. With it, private repos are
+          # counted; without it, only public repos are.
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ github.repository_owner }}
+          INCLUDE_PRIVATE: ${{ secrets.STATS_TOKEN != '' }}
+        run: node scripts/generate-stats.mjs generated
+
+      - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ github.repository_owner }}
+          INCLUDE_PRIVATE: ${{ secrets.STATS_TOKEN != '' }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git add generated
+            if git diff --cached --quiet; then
+              echo "No changes"
+              exit 0
+            fi
+            git commit -m "chore: update language stats"
+            if git push origin "HEAD:$BRANCH"; then
+              exit 0
+            fi
+            # The branch moved while we were running: start from the latest
+            # commit, regenerate, and try again.
+            echo "Push rejected (attempt $attempt); retrying"
+            git fetch origin "$BRANCH"
+            git reset --hard "origin/$BRANCH"
+            node scripts/generate-stats.mjs generated
+          done
+          exit 1
