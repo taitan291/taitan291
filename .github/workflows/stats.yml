@@ -1,4 +1,4 @@
-name: Update language stats
+name: TAITAN291
 
 on:
   schedule:
@@ -35,18 +35,18 @@ jobs:
 
       - name: Generate language stats
         env:
-          # STATS_TOKEN is a personal access token. With it, private repos are
+          # TAITAN291 is a personal access token. With it, private repos are
           # counted; without it, only public repos are.
-          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TAITAN291 || secrets.GITHUB_TOKEN }}
           GITHUB_USER: ${{ github.repository_owner }}
-          INCLUDE_PRIVATE: ${{ secrets.STATS_TOKEN != '' }}
+          INCLUDE_PRIVATE: ${{ secrets.TAITAN291 != '' }}
         run: node scripts/generate-stats.mjs generated
 
       - name: Commit changes
         env:
-          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TAITAN291 || secrets.GITHUB_TOKEN }}
           GITHUB_USER: ${{ github.repository_owner }}
-          INCLUDE_PRIVATE: ${{ secrets.STATS_TOKEN != '' }}
+          INCLUDE_PRIVATE: ${{ secrets.TAITAN291 != '' }}
           BRANCH: ${{ github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
