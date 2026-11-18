@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="495" height="225" viewBox="0 0 495 225" role="img" aria-labelledby="title">
-  <title id="title">Top Languages: Rust 39.8%, TypeScript 13.5%, Nix 12.3%, QML 8.4%, Svelte 6.7%, Go 6.4%, Typst 3.9%, CSS 3.6%, Other 5.4%</title>
+  <title id="title">Top Languages: Rust 36.8%, TypeScript 16.4%, Nix 11.4%, Svelte 9.7%, QML 7.7%, Go 5.9%, Typst 3.6%, CSS 3.4%, Other 5.0%</title>
   <style>
     :root { --bg: #ffffff; --border: #d0d7de; --text: #1f2328; --muted: #656d76; }
     @media (prefers-color-scheme: dark) {
@@ -14,41 +14,41 @@
   <text class="title" x="25" y="35">Top Languages</text>
   <clipPath id="bar"><rect x="25" y="52" width="445" height="10" rx="5"/></clipPath>
   <g clip-path="url(#bar)">
-    <rect x="25.00" y="52" width="177.30" height="10" fill="#dea584"/>
-    <rect x="202.30" y="52" width="59.98" height="10" fill="#3178c6"/>
-    <rect x="262.28" y="52" width="54.81" height="10" fill="#7e7eff"/>
-    <rect x="317.09" y="52" width="37.16" height="10" fill="#44a51c"/>
-    <rect x="354.25" y="52" width="29.86" height="10" fill="#ff3e00"/>
-    <rect x="384.12" y="52" width="28.41" height="10" fill="#00ADD8"/>
-    <rect x="412.53" y="52" width="17.50" height="10" fill="#239dad"/>
-    <rect x="430.03" y="52" width="15.88" height="10" fill="#563d7c"/>
-    <rect x="445.90" y="52" width="24.10" height="10" fill="#8b949e"/>
+    <rect x="25.00" y="52" width="163.91" height="10" fill="#dea584"/>
+    <rect x="188.91" y="52" width="73.14" height="10" fill="#3178c6"/>
+    <rect x="262.05" y="52" width="50.65" height="10" fill="#7e7eff"/>
+    <rect x="312.70" y="52" width="43.27" height="10" fill="#ff3e00"/>
+    <rect x="355.97" y="52" width="34.36" height="10" fill="#44a51c"/>
+    <rect x="390.32" y="52" width="26.26" height="10" fill="#00ADD8"/>
+    <rect x="416.59" y="52" width="16.18" height="10" fill="#239dad"/>
+    <rect x="432.77" y="52" width="14.96" height="10" fill="#563d7c"/>
+    <rect x="447.72" y="52" width="22.28" height="10" fill="#8b949e"/>
   </g>
   <circle cx="30" cy="91" r="5" fill="#dea584"/>
   <text class="name" x="41" y="95">Rust</text>
-  <text class="pct" x="225" y="95" text-anchor="end">39.8%</text>
+  <text class="pct" x="225" y="95" text-anchor="end">36.8%</text>
   <circle cx="260" cy="91" r="5" fill="#3178c6"/>
   <text class="name" x="271" y="95">TypeScript</text>
-  <text class="pct" x="455" y="95" text-anchor="end">13.5%</text>
+  <text class="pct" x="455" y="95" text-anchor="end">16.4%</text>
   <circle cx="30" cy="116" r="5" fill="#7e7eff"/>
   <text class="name" x="41" y="120">Nix</text>
-  <text class="pct" x="225" y="120" text-anchor="end">12.3%</text>
-  <circle cx="260" cy="116" r="5" fill="#44a51c"/>
-  <text class="name" x="271" y="120">QML</text>
-  <text class="pct" x="455" y="120" text-anchor="end">8.4%</text>
-  <circle cx="30" cy="141" r="5" fill="#ff3e00"/>
-  <text class="name" x="41" y="145">Svelte</text>
-  <text class="pct" x="225" y="145" text-anchor="end">6.7%</text>
+  <text class="pct" x="225" y="120" text-anchor="end">11.4%</text>
+  <circle cx="260" cy="116" r="5" fill="#ff3e00"/>
+  <text class="name" x="271" y="120">Svelte</text>
+  <text class="pct" x="455" y="120" text-anchor="end">9.7%</text>
+  <circle cx="30" cy="141" r="5" fill="#44a51c"/>
+  <text class="name" x="41" y="145">QML</text>
+  <text class="pct" x="225" y="145" text-anchor="end">7.7%</text>
   <circle cx="260" cy="141" r="5" fill="#00ADD8"/>
   <text class="name" x="271" y="145">Go</text>
-  <text class="pct" x="455" y="145" text-anchor="end">6.4%</text>
+  <text class="pct" x="455" y="145" text-anchor="end">5.9%</text>
   <circle cx="30" cy="166" r="5" fill="#239dad"/>
   <text class="name" x="41" y="170">Typst</text>
-  <text class="pct" x="225" y="170" text-anchor="end">3.9%</text>
+  <text class="pct" x="225" y="170" text-anchor="end">3.6%</text>
   <circle cx="260" cy="166" r="5" fill="#563d7c"/>
   <text class="name" x="271" y="170">CSS</text>
-  <text class="pct" x="455" y="170" text-anchor="end">3.6%</text>
+  <text class="pct" x="455" y="170" text-anchor="end">3.4%</text>
   <circle cx="30" cy="191" r="5" fill="#8b949e"/>
   <text class="name" x="41" y="195">Other</text>
-  <text class="pct" x="225" y="195" text-anchor="end">5.4%</text>
+  <text class="pct" x="225" y="195" text-anchor="end">5.0%</text>
 </svg>
